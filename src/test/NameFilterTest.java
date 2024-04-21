@@ -23,7 +23,7 @@ public class NameFilterTest {
         // Створюємо об'єкт фільтра з ім'ям "Alice"
         NameFilter filter = new NameFilter("Alice");
 
-        // Застосовуємо фільтр до списку контактів
+        // Застосовуємо фільтр до списку контактіv
         List<Contact> filteredContacts = filter.apply(contacts);
 
         // Перевіряємо, чи відфільтровані контакти містять тільки контакти з ім'ям "Alice"
