@@ -87,13 +87,19 @@ public class NameFilterTest {
 
     @Test
     public void testApplyFilterMultipleMatches() {
-        // Додайте свій код тесту для перевірки випадку, коли фільтр знаходить більше одного відповідного контакту
-    }
+        List<Contact> contacts = Arrays.asList(
+                new Contact("John Doe", "1234567890"),
+                new Contact("Alice Smith", "0987654321"),
+                new Contact("Alice Johnson", "4445556666"),
+                new Contact("Bob Johnson", "1112223333")
+        );
 
+        NameFilter filter = new NameFilter("Johnson");
+        List<Contact> filteredContacts = filter.apply(contacts);
+
+        assertEquals(2, filteredContacts.size());
+        assertTrue(filteredContacts.stream().allMatch(contact -> contact.getName().contains("Johnson")));
+    }
     @Test
-    public void testApplyFilterCaseInsensitive() {
-        // Додайте свій код тесту для перевірки випадку, коли фільтр реагує на регістр символів
-    }
-
-    // Додайте ще 8 тестів за аналогією з вищезазначеними
+    public void testApplyFilterCaseInsensitive() {}
 }
